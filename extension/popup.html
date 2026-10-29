@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OmniDL Pro Streams</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      width: 360px;
+      max-height: 520px;
+      background-color: #0d1117;
+      color: #e6edf3;
+      padding: 14px;
+      font-size: 13px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      color: #58a6ff;
+    }
+    .status-pill {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background-color: #21262d;
+    }
+    .status-pill.online {
+      color: #3fb950;
+      background-color: rgba(46, 160, 67, 0.15);
+      border: 1px solid rgba(46, 160, 67, 0.4);
+    }
+    .status-pill.offline {
+      color: #f85149;
+      background-color: rgba(248, 81, 73, 0.15);
+      border: 1px solid rgba(248, 81, 73, 0.4);
+    }
+    .stream-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .stream-card {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .stream-card:hover {
+      border-color: #58a6ff;
+    }
+    .stream-title {
+      font-weight: 600;
+      color: #f0f6fc;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .stream-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background-color: rgba(56, 139, 253, 0.2);
+      color: #58a6ff;
+      width: fit-content;
+    }
+    .stream-url {
+      font-size: 11px;
+      color: #8b949e;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .btn-dl {
+      flex: 1;
+      background-color: #238636;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .btn-dl:hover {
+      background-color: #2ea043;
+    }
+    .btn-copy {
+      background-color: #21262d;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+      border-radius: 4px;
+      padding: 6px 8px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .btn-copy:hover {
+      border-color: #8b949e;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 30px 10px;
+      color: #8b949e;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="brand">⚡ OmniDL Pro</div>
+    <div id="app-status" class="status-pill offline">Checking App...</div>
+  </div>
+
+  <div id="streams-container" class="stream-list">
+    <div class="empty-state">
+      Play any video on this page, and OmniDL will capture the stream!
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

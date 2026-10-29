@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "OmniDL Pro - Video Grabber",
+  "version": "1.0.0",
+  "description": "IDM-like video downloader extension for Chrome, Edge, and Brave. Captures m3u8, HLS, MP4 from any site.",
+  "permissions": [
+    "webRequest",
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "OmniDL Pro Stream Grabber"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

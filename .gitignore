@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+chrome-test-profile/
+dist/
+build/
+*.spec
+tests/test_data/
+*.exe
